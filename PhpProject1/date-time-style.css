@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background: #f1f1f1;
+  }
+  header {
+    background: #1C1F25;
+    color: #fff;
+    padding: 0px;
+    margin: 0px;
+    height: 150px;
+    text-align: center;
+  }
+  a{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #D2B48C;
+    color: #f1f1f1;
+    border-radius: 10px;
+    font-weight: 100;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18px;
+    position:relative;
+    left: 280px;
+  }
+  header h1 {
+    font-size: 36px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+
+  }
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.40em;
+    color: #1C1F25;
+    font-weight: bolder;
+  }
+  .input-group input,
+  .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #f1f1f1;
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  .input-group textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  .input-group button {
+    padding: 10px 20px;
+    background: #D2B48C;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.2s ease;
+    border: none;
+    cursor: pointer;
+  }
+  .input-group button:hover {
+    background: #666;
+  }
+  
