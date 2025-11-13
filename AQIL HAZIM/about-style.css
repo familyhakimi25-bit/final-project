@@ -1,0 +1,92 @@
+:root{--maroon:#7b1020;--maroon-dark:#5e0c18;--cream:#fffafa;--text:#2a2a2a;--muted:#777;--shadow:0 10px 30px rgba(0,0,0,.08);--radius:18px}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--cream)}
+a{color:var(--maroon);text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(1100px,92%);margin-inline:auto}
+
+/* NAV */
+.topbar{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:rgba(255,255,255,.75);border-bottom:1px solid #eee;z-index:20}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.brand-logo{width:40px;height:40px;object-fit:contain}
+.brand-name{letter-spacing:.5px}
+.menu{display:flex;gap:18px;align-items:center}
+.menu a{padding:10px 14px;border-radius:999px;font-weight:500}
+.menu a.active,.menu a:hover{background:var(--maroon);color:#fff}
+.nav-toggle{display:none;border:none;background:transparent;font-size:26px}
+
+/* PAGE HERO */
+.page-hero{padding:64px 0;background:linear-gradient(180deg,#fff,#fff6f7);border-bottom:1px solid #f0d7dd}
+
+/* CONTENT */
+.section{padding:64px 0}
+.two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+.checks{line-height:1.9}
+.facts{margin:0;padding-left:16px;line-height:1.9}
+.glass{background:rgba(255,255,255,.6);box-shadow:var(--shadow);backdrop-filter:blur(8px);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);padding:20px}
+
+/* FOOTER */
+.footer{background:#111;color:#ddd;padding-top:32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;padding-bottom:16px}
+.foot-links{list-style:none;padding:0;margin:0}
+.foot-links a{color:#ddd}
+.copyright{border-top:1px solid #222;padding:12px 0;text-align:center;color:#999}
+
+/* RESPONSIVE */
+@media (max-width: 900px){
+  .two-col,.footer-grid{grid-template-columns:1fr}
+}
+
+@media (max-width: 760px){
+  .menu{
+    position:absolute;
+    right:4%;
+    top:64px;
+    flex-direction:column;
+    background:#fff;
+    border:1px solid #eee;
+    box-shadow:var(--shadow);
+    padding:10px;
+    border-radius:12px;
+    display:none;
+  }
+  .menu.show{display:flex}
+  .nav-toggle{display:block}
+}
+/* --- Polish & aksesibiliti tambahan --- */
+
+/* Pastikan menu mobile berada di atas konten lain */
+.topbar { z-index: 50; }
+.menu { z-index: 60; }
+
+/* Lebih jelas bila tab keyboard */
+.menu a:focus-visible,
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--maroon);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* Hover/active state yang konsisten */
+.menu a:hover,
+.menu a.active {
+  background: var(--maroon);
+  color: #fff;
+  transition: background .2s ease, color .2s ease;
+}
+
+/* Elak menu mobile terpotong pada skrin kecil sangat */
+@media (max-width: 760px){
+  .menu{
+    width: max-content;
+    max-width: 92vw;     /* jangan lebih dari viewport */
+    right: 4%;
+  }
+  .brand-logo{ width:36px; height:36px; }
+}
+
+/* Kurangkan animasi untuk pengguna yang tak gemar motion */
+@media (prefers-reduced-motion: reduce){
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
