@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | KI'AD — Turquoise Design</title>
+  <link rel="icon" href="favicon-32x32.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- GUNA CSS YANG SAMA DENGAN ABOUT -->
+  <link rel="stylesheet" href="about-style.css" />
+</head>
+<body>
+  <!-- SIDEBAR -->
+  <aside class="sidenav">
+    <a class="brand" href="home-v2.html">
+      <img src="logo-removebg-preview.png" alt="KI'AD logo">
+      <span>KI'AD</span>
+    </a>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a class="active" href="faq-v2.html" aria-current="page">FAQ</a>
+    </nav>
+    <div class="side-footer">© <span id="yearC"></span></div>
+    <button class="burger" id="burgerB" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </aside>
+
+  <main class="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <h1>Got Questions?<br><span>We’ve got answers.</span></h1>
+        <p>Quick info about bookings, payments, and shop policies.</p>
+      </div>
+      <div class="skew"></div>
+    </section>
+
+    <!-- FAQ LIST -->
+    <section class="section">
+      <div class="container">
+        <div class="faq-list">
+          <details>
+            <summary><span>How do I make a booking?</span></summary>
+            <div class="content">Go to <strong>Home</strong> and click <em>Book Now</em>. Choose date, time, and barber, then confirm.</div>
+          </details>
+          <details>
+            <summary><span>Can I reschedule or cancel?</span></summary>
+            <div class="content">Yes. Use your confirmation link to reschedule up to 2 hours before your slot.</div>
+          </details>
+          <details>
+            <summary><span>Do you accept walk-ins?</span></summary>
+            <div class="content">Limited walk-ins are accepted; online bookings get priority.</div>
+          </details>
+          <details>
+            <summary><span>What payments are supported?</span></summary>
+            <div class="content">Cash, cards, and popular e-wallets at the shop.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container fgrid">
+        <div>
+          <h5>KI'AD</h5>
+          <p>Premium cuts, premium UX.</p>
+        </div>
+        <div>
+          <h5>Navigate</h5>
+          <ul>
+            <li><a href="home-v2.html">Home</a></li>
+            <li><a href="about-v2.html">About Us</a></li>
+            <li><a href="faq-v2.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contact</h5>
+          <p>hello@kiad.example<br>+60 12-345 6789</p>
+        </div>
+      </div>
+      <div class="copy">© <span id="yearD"></span> KI'AD. All rights reserved.</div>
+    </footer>
+  </main>
+
+  <!-- INLINE JS -->
+  <script>
+    // Tahun automatik
+    const now=new Date().getFullYear();
+    const y1=document.getElementById('yearC'); const y2=document.getElementById('yearD');
+    if(y1) y1.textContent=now; if(y2) y2.textContent=now;
+
+    // Toggle sidebar mobile
+    const burger=document.getElementById('burgerB');
+    const sidenav=document.querySelector('.sidenav');
+    if(burger){
+      burger.addEventListener('click',()=>{
+        sidenav.classList.toggle('open');
+        burger.setAttribute('aria-expanded', sidenav.classList.contains('open') ? 'true' : 'false');
+      });
+    }
+  </script>
+</body>
+</html>

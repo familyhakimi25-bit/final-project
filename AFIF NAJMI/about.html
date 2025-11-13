@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | KI'AD — Turquoise Design</title>
+  <link rel="icon" href="favicon-32x32.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="about-style.css" />
+</head>
+<body>
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidenav">
+    <a class="brand" href="home.html">
+      <img src="logo-removebg-preview.png" alt="KI'AD logo">
+      <span>KI'AD</span>
+    </a>
+    <nav>
+      <a href="home.html">Home</a>
+      <a class="active" href="about.html" aria-current="page">About Us</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <div class="side-footer">© <span id="yearA"></span></div>
+    <button class="burger" id="burgerA" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </aside>
+
+  <main class="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <h1>Craft & Code,<br><span>Better Haircuts.</span></h1>
+        <p>From neighborhood trims to a seamless digital booking experience — we keep things sharp, fast, and friendly.</p>
+      </div>
+      <div class="skew"></div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats container">
+      <article class="scard"><h3>5k+</h3><p>Total bookings</p></article>
+      <article class="scard"><h3>4.9★</h3><p>Average rating</p></article>
+      <article class="scard"><h3>12</h3><p>Expert barbers</p></article>
+      <article class="scard"><h3>2023</h3><p>Since</p></article>
+    </section>
+
+    <!-- STORY + TIMELINE -->
+    <section class="section container two-col">
+      <div>
+        <h2>Our Story</h2>
+        <p>KI'AD began as a small chair and big dreams. We focused on craft, consistency, and care. Then we coded a booking flow that matches our chair-side experience: simple and reliable.</p>
+        <ul class="ticks">
+          <li>People-first service</li>
+          <li>Clean, quick booking</li>
+          <li>Comfort & community</li>
+        </ul>
+      </div>
+      <ol class="timeline">
+        <li>
+          <span class="dot"></span>
+          <div class="tl-card">
+            <h4>2023 — Opened Doors</h4>
+            <p>One chair, full heart, first customers.</p>
+          </div>
+        </li>
+        <li>
+          <span class="dot"></span>
+          <div class="tl-card">
+            <h4>2024 — Mobile-first</h4>
+            <p>Launched our booking UI with reminders & simple reschedules.</p>
+          </div>
+        </li>
+        <li>
+          <span class="dot"></span>
+          <div class="tl-card">
+            <h4>2025 — Scaling</h4>
+            <p>More barbers, more slots, same attention to detail.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container fgrid">
+        <div>
+          <h5>KI'AD</h5>
+          <p>Premium cuts, premium UX.</p>
+        </div>
+        <div>
+          <h5>Navigate</h5>
+          <ul>
+            <li><a href="home-v2.html">Home</a></li>
+            <li><a href="about-v2.html">About Us</a></li>
+            <li><a href="faq-v2.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contact</h5>
+          <p>hello@kiad.example<br>+60 12-345 6789</p>
+        </div>
+      </div>
+      <div class="copy">© <span id="yearB"></span> KI'AD. All rights reserved.</div>
+    </footer>
+  </main>
+
+  <script>
+    const yA=document.getElementById('yearA'); const yB=document.getElementById('yearB');
+    const now=new Date().getFullYear();
+    if(yA) yA.textContent=now; if(yB) yB.textContent=now;
+
+    const burgerA=document.getElementById('burgerA');
+    const sidenav=document.querySelector('.sidenav');
+    if(burgerA){
+      burgerA.addEventListener('click',()=>{
+        sidenav.classList.toggle('open');
+        const open=sidenav.classList.contains('open');
+        burgerA.setAttribute('aria-expanded', open? 'true':'false');
+      });
+    }
+  </script>
+</body>
+</html>

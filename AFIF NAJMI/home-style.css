@@ -1,0 +1,82 @@
+:root{ --maroon:#10b9a8; --maroon-2:#0d8f83; --cream:#f7fffd; --ink:#16312f; --muted:#5d7a77; --card:#ffffff; --line:#e6f3f1; --shadow:0 10px 30px rgba(8, 38, 35, .12); --radius:18px }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--cream)}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:var(--maroon)}
+
+
+/* Sidebar (same structure as v2) */
+.sidenav{position:fixed;inset:0 auto 0 0;width:250px;background:#0e1414;color:#d7f6f2;display:flex;flex-direction:column;gap:12px;padding:18px;border-right:1px solid #153432}
+.sidenav .brand{display:flex;align-items:center;gap:10px;color:#eafffb;font-weight:800;font-size:18px}
+.sidenav .brand img{width:36px;height:36px;object-fit:contain}
+.sidenav nav{display:flex;flex-direction:column;margin-top:10px}
+.sidenav nav a{padding:10px 12px;border-radius:12px;color:#cff5f0}
+.sidenav nav a.active,.sidenav nav a:hover{background:linear-gradient(90deg,var(--maroon),var(--maroon-2));color:#fff}
+.side-footer{margin-top:auto;font-size:12px;color:#a7d9d3}
+.burger{display:none;position:absolute;right:-44px;top:14px;border:none;background:#0e1414;color:#eafffb;width:40px;height:40px;border-radius:10px;box-shadow:0 6px 16px rgba(0,0,0,.2)}
+
+
+.main{margin-left:250px}
+.container{width:min(1100px,92%);margin-inline:auto}
+
+
+/* Hero */
+.hero{position:relative;padding:72px 0 42px;background:linear-gradient(180deg,#fff,#f2fffd)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:center}
+.hero .copy h1{font-size:clamp(34px,5vw,56px);line-height:1.04;margin:0;color:var(--maroon-2)}
+.hero .copy h1 span{color:var(--maroon)}
+.hero .copy p{color:var(--muted);max-width:60ch}
+.cta-row{display:flex;gap:12px;margin-top:14px}
+.btn{display:inline-block;border:1.6px solid var(--maroon);padding:12px 16px;border-radius:999px;font-weight:700}
+.btn-primary{background:var(--maroon);color:#fff}
+.btn-ghost{color:var(--maroon)}
+.btn-full{display:block;width:100%;background:var(--maroon);color:#fff;border:none;padding:12px 18px;border-radius:12px;text-align:center}
+.glass{background:rgba(255,255,255,.7);box-shadow:var(--shadow);backdrop-filter:blur(8px);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);padding:20px}
+.card h3{margin:0 0 8px 0}
+.slots{list-style:none;margin:0 0 14px 0;padding:0;color:var(--muted)}
+.hero .skew{position:absolute;left:0;right:0;bottom:-1px;height:48px;background:linear-gradient(90deg,var(--maroon),var(--maroon-2));clip-path:polygon(0 0,100% 0,100% 100%,70% 60%,40% 100%,0 60%)}
+
+
+/* Features */
+.title{margin:0 0 18px 0;color:var(--maroon-2);font-size:clamp(22px,3vw,34px)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+.fcard .icon{font-size:26px}
+.fcard h3{margin:8px 0 6px 0}
+.fcard p{margin:0;color:var(--muted)}
+
+
+/* Testimonials */
+.section.alt{background:#fff}
+.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+.tcard blockquote{margin:0 0 8px 0;color:#274b47}
+
+
+/* CTA strip */
+.cta-strip{background:linear-gradient(90deg,var(--maroon),var(--maroon-2));color:#fff}
+.strip-in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 0}
+.strip-in h3{margin:0}
+
+
+/* Footer */
+.footer{background:#0f1514;color:#d6f4ef}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;padding:24px 0}
+.footer a{color:#d6f4ef}
+.copy{border-top:1px solid #173a36;text-align:center;padding:12px 0;color:#a8d9d3}
+
+
+/* Responsive */
+@media (max-width: 980px){
+.hero-grid{grid-template-columns:1fr}
+.cards{grid-template-columns:repeat(2,1fr)}
+.testimonials{grid-template-columns:1fr}
+.fgrid{grid-template-columns:1fr}
+}
+@media (max-width: 760px){
+.sidenav{transform:translateX(-100%);transition:transform .25s ease}
+.sidenav.open{transform:translateX(0)}
+.burger{display:block}
+.main{margin-left:0}
+}
+
